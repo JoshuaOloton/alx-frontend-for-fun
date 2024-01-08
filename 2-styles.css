@@ -1,0 +1,69 @@
+:root {
+	--track-size: 60px;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.toggle {
+ display: flex;
+}
+
+.toggle-label {
+	position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-inner::before {
+	content: "Yes";
+}
+
+.toggle-inner::after {
+	content: "No";
+}
+
+.toggle-inner {
+	width: calc(var(--track-size)*2);
+	height: 40px;
+	border: 2px solid rgb(177, 177, 177);
+	background: rgb(235,235,235);
+	border-radius: 30px;
+	color: rgb(124, 124, 124);
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner {
+	background: rgb(225,1,60);
+	color: rgb(255, 255, 255);
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+	transform: translateX( calc(var(--track-size)*1));
+}
+
+.toggle-switch {
+  cursor: pointer;
+	width: var(--track-size);
+	height: var(--track-size);
+	border: 2px solid darkgray;
+	background: rgb(255, 255, 255);
+	border-radius: 50%;
+	position: absolute;
+  transition: all 0.2s ease;
+}
+
+.toggle-cb {
+	display: none;
+}
